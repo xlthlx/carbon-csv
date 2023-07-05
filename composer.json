@@ -1,0 +1,23 @@
+{
+    "name": "htmlburger/carbon-csv",
+    "description": "Simple CSV file parser",
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Carbon_CSV\\": "src/"
+        }
+    },
+    "require-dev": {
+        "illuminate/support": "^5.4",
+        "symfony/var-dumper": "^3.3",
+        "phpunit/phpunit": "^9.3",
+        "laravel/pint": "^1.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    }
+}
