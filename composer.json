@@ -1,5 +1,5 @@
 {
-    "name": "htmlburger/carbon-csv",
+    "name": "xlthlx/carbon-csv",
     "description": "Simple CSV file parser",
     "require": {
         "php": "^8.0"
