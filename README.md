@@ -6,13 +6,13 @@ Carbon CSV is a PHP library aimed at simplifying CSV parsing.
 It provides simple interface to ease mapping columns via a header row, or custom column names. 
 
 ## Installation
-This repository is not published yet, so include it in composer.json file as repositories.
+Include it in composer.json file as repositories.
 
 ```json
 "repositories":[
     {
         "type":"git",
-        "url":"https://github.com/bedus-creation/carbon-csv.git"
+        "url":"https://github.com/xlthlx/carbon-csv.git"
     }
 ],
 ```
@@ -20,7 +20,7 @@ This repository is not published yet, so include it in composer.json file as rep
 Require it from the terminal.
 
 ```bash
-composer require htmlburger/carbon-csv
+composer require xlthlx/carbon-csv
 ```
 
 ## Usage

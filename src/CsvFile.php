@@ -9,7 +9,7 @@ use SplFileObject as File;
  */
 class CsvFile extends File implements \Countable
 {
-    const DEFAULT_ENCODING = 'utf-8';
+    public const DEFAULT_ENCODING = 'utf-8';
 
     private $encoding = 'utf-8';
 
@@ -79,7 +79,10 @@ class CsvFile extends File implements \Countable
         return $this->row_counter - 1;
     }
 
-    public function current(): string|array|false
+	/**
+	 * @throws Exception
+	 */
+	public function current(): string|array|false
     {
         $this->row_counter++;
         $row = parent::current();
@@ -89,9 +92,8 @@ class CsvFile extends File implements \Countable
             throw new Exception(sprintf('Start column must be between %d and %d.', min($row_keys), max($row_keys)));
         }
 
-        $formatted_row = $this->format_row($row);
+	    return $this->format_row($row);
 
-        return $formatted_row;
     }
 
     private function remove_columns($old_row)
@@ -100,7 +102,7 @@ class CsvFile extends File implements \Countable
 
         $index = 0;
         foreach ($old_row as $column_name => $column_value) {
-            if (! in_array($index, $this->columns_to_skip)) {
+            if (! in_array( $index, $this->columns_to_skip, true ) ) {
                 $new_row[$column_name] = $column_value;
             }
 
